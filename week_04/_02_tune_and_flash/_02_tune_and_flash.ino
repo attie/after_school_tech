@@ -14,7 +14,8 @@ struct pattern {
 };
 
 /* this is an array that holds our data
-   when it is interpreted correctly, it will play a tune, and flash the LEDs in a pattern! */
+   when it is interpreted correctly, it will play a tune,
+   and flash the LEDs in a pattern! */
 struct pattern pattern[] = {
   {  5, NOTE_G, 250, HIGH, HIGH, HIGH, HIGH},
   {  6, NOTE_E, 250, LOW , LOW , LOW , LOW },
@@ -81,7 +82,8 @@ void loop(void) {
          the second time, we use values from the second row, etc... */
     if (pattern[i].octave != -1 && pattern[i].note != -1) {
       
-      /* here, we look up the note's frequency, which is stored in the array 'note' - see musical_notes.h */
+      /* here, we look up the note's frequency, which is stored in the array 'note'
+          - see musical_notes.h */
       freq = note[ pattern[i].octave ][ pattern[i].note ];
       
       /* next, we play the tone on our buzzer's pin */
